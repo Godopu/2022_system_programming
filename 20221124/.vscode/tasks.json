@@ -1,0 +1,31 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "cpp_build",
+            "type": "shell",
+            "command": "/usr/bin/clang",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/out/${fileBasenameNoExtension}",
+                "-lpthread"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "make_out_dir"
+            ],
+        }
+    ]
+}
